@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Polare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .bg-polare-gold { background-color: #FFD700; }
+        .text-polare-gold { color: #FFD700; }
+        .bg-polare-red { background-color: #FF0000; }
+        .text-polare-red { color: #FF0000; }
+        .bg-polare-black { background-color: #000000; }
+        .text-polare-black { color: #000000; }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-polare-black text-white h-12 flex items-center justify-center sticky top-0 z-50">
+        <div class="max-w-6xl w-full flex justify-between items-center px-4">
+            <a href="/" class="text-2xl font-semibold text-polare-gold">Polare</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-polare-gold">Store</a>
+                <a href="/products" class="text-polare-gold font-medium">Products</a>
+                <a href="/support" class="hover:text-polare-gold">Support</a>
+            </div>
+            <button id="chatbot-toggle" class="bg-polare-red px-4 py-1 rounded-full hover:bg-red-700">Chat</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto py-12 px-4">
+        <h1 class="text-4xl font-bold mb-8 text-center">Polare Products</h1>
+        
+        <!-- Balls Section -->
+        <section id="balls" class="mb-16">
+            <h2 class="text-2xl font-semibold mb-6 pb-2 border-b border-gray-200">Ping Pong Balls</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="h-48 bg-polare-gold flex items-center justify-center">
+                        <div class="w-16 h-16 bg-white rounded-full"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Tournament 3-Star</h3>
+                        <p class="text-gray-600 mb-4">ITTF approved premium balls</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$12.99</span>
+                            <button class="bg-polare-red text-white px-4 py-2 rounded hover:bg-red-700">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="h-48 bg-polare-gold flex items-center justify-center">
+                        <div class="w-16 h-16 bg-white rounded-full"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Training 2-Star</h3>
+                        <p class="text-gray-600 mb-4">Durable balls for practice</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$8.99</span>
+                            <button class="bg-polare-red text-white px-4 py-2 rounded hover:bg-red-700">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="h-48 bg-polare-gold flex items-center justify-center">
+                        <div class="w-16 h-16 bg-white rounded-full"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Club Pack (100 balls)</h3>
+                        <p class="text-gray-600 mb-4">Great for clubs and schools</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$49.99</span>
+                            <button class="bg-polare-red text-white px-4 py-2 rounded hover:bg-red-700">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paddles Section -->
+        <section id="paddles" class="mb-16">
+            <h2 class="text-2xl font-semibold mb-6 pb-2 border-b border-gray-200">Paddles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="h-48 bg-polare-red flex items-center justify-center">
+                        <div class="w-32 h-4 bg-polare-black rounded-full"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Pro Carbon</h3>
+                        <p class="text-gray-600 mb-4">Carbon fiber blade with speed rubber</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$89.99</span>
+                            <button class="bg-polare-red text-white px-4 py-2 rounded hover:bg-red-700">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="h-48 bg-polare-red flex items-center justify-center">
+                        <div class="w-32 h-4 bg-polare-black rounded-full"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">All-Rounder</h3>
+                        <p class="text-gray-600 mb-4">Balanced paddle for all styles</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$59.99</span>
+                            <button class="bg-polare-red text-white px-4 py-2 rounded hover:bg-red-700">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="h-48 bg-polare-red flex items-center justify-center">
+                        <div class="w-32 h-4 bg-polare-black rounded-full"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Beginner Set</h3>
+                        <p class="text-gray-600 mb-4">2 paddles + 6 balls</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$39.99</span>
+                            <button class="bg-polare-red text-white px-4 py-2 rounded hover:bg-red-700">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rubbers Section -->
+        <section id="rubbers" class="mb-16">
+            <h2 class="text-2xl font-semibold mb-6 pb-2 border-b border-gray-200">Rubbers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="h-48 bg-polare-black flex items-center justify-center">
+                        <div class="w-24 h-24 rounded-full" style="background: conic-gradient(#000000, #333333)"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Spin Master</h3>
+                        <p class="text-gray-600 mb-4">Maximum spin rubber</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$34.99</span>
+                            <button class="bg-polare-red text-white px-4 py-2 rounded hover:bg-red-700">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="h-48 bg-polare-black flex items-center justify-center">
+                        <div class="w-24 h-24 rounded-full" style="background: conic-gradient(#000000, #555555)"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Speed Demon</h3>
+                        <p class="text-gray-600 mb-4">Fast attacking rubber</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$39.99</span>
+                            <button class="bg-polare-red text-white px-4 py-2 rounded hover:bg-red-700">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="h-48 bg-polare-black flex items-center justify-center">
+                        <div class="w-24 h-24 rounded-full" style="background: conic-gradient(#000000, #777777)"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Control Pro</h3>
+                        <p class="text-gray-600 mb-4">Precision control rubber</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$29.99</span>
+                            <button class="bg-polare-red text-white px-4 py-2 rounded hover:bg-red-700">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot Modal (same as index.html) -->
+    <div id="chatbot-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg w-full max-w-md max-h-[80vh] flex flex-col">
+            <div class="bg-polare-black text-white p-4 rounded-t-lg flex justify-between items-center">
+                <h3 class="text-lg font-semibold">Polare Assistant</h3>
+                <button id="chatbot-close" class="text-white hover:text-polare-gold">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="chatbot-messages" class="flex-1 p-4 overflow-y-auto">
+                <div class="bg-gray-100 rounded-lg p-3 mb-2">
+                    <p>Hello! I'm your Polare assistant. How can I help you today?</p>
+                </div>
+            </div>
+            <div class="p-4 border-t">
+                <div class="flex">
+                    <input id="chatbot-input" type="text" placeholder="Type your message..." 
+                           class="flex-1 border rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-polare-gold">
+                    <button id="chatbot-send" class="bg-polare-red text-white px-4 py-2 rounded-r-lg hover:bg-red-700">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chatbot Toggle
+        document.getElementById('chatbot-toggle').addEventListener('click', () => {
+            document.getElementById('chatbot-modal').classList.toggle('hidden');
+        });
+
+        document.getElementById('chatbot-close').addEventListener('click', () => {
+            document.getElementById('chatbot-modal').classList.add('hidden');
+        });
+
+        // Chatbot Functionality
+        document.getElementById('chatbot-send').addEventListener('click', async () => {
+            const input = document.getElementById('chatbot-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Add user message
+            const messagesDiv = document.getElementById('chatbot-messages');
+            messagesDiv.innerHTML += `
+                <div class="bg-polare-gold text-white rounded-lg p-3 mb-2 ml-8">
+                    <p>${message}</p>
+                </div>
+            `;
+
+            // Clear input
+            input.value = '';
+
+            // Scroll to bottom
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // Get AI response
+            try {
+                const response = await fetch('/chatbot', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message })
+                });
+                const data = await response.json();
+                
+                // Add AI response
+                messagesDiv.innerHTML += `
+                    <div class="bg-gray-100 rounded-lg p-3 mb-2">
+                        <p>${data.response}</p>
+                    </div>
+                `;
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        // Allow pressing Enter to send message
+        document.getElementById('chatbot-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('chatbot-send').click();
+            }
+        });
+    </script>
+</body>
+</html>
