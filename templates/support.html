@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Polare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .bg-polare-gold { background-color: #FFD700; }
+        .text-polare-gold { color: #FFD700; }
+        .bg-polare-red { background-color: #FF0000; }
+        .text-polare-red { color: #FF0000; }
+        .bg-polare-black { background-color: #000000; }
+        .text-polare-black { color: #000000; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-polare-black text-white h-12 flex items-center justify-center sticky top-0 z-50">
+        <div class="max-w-6xl w-full flex justify-between items-center px-4">
+            <a href="/" class="text-2xl font-semibold text-polare-gold">Polare</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-polare-gold">Store</a>
+                <a href="/products" class="hover:text-polare-gold">Products</a>
+                <a href="/support" class="text-polare-gold font-medium">Support</a>
+            </div>
+            <button id="chatbot-toggle" class="bg-polare-red px-4 py-1 rounded-full hover:bg-red-700">Chat</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto py-12 px-4">
+        <h1 class="text-4xl font-bold mb-8 text-center">Polare Support</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- FAQ Section -->
+            <section>
+                <h2 class="text-2xl font-semibold mb-6 pb-2 border-b border-gray-200">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div class="border-b border-gray-200 pb-4">
+                        <h3 class="text-lg font-medium mb-2">How do I choose the right paddle?</h3>
+                        <p class="text-gray-600">Consider your playing style - offensive players may prefer faster blades with spinny rubbers, while defensive players might want more control.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-4">
+                        <h3 class="text-lg font-medium mb-2">What's the difference between 1-star and 3-star balls?</h3>
+                        <p class="text-gray-600">3-star balls are ITTF approved for competition with better consistency and durability, while 1-star balls are better for casual play.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-4">
+                        <h3 class="text-lg font-medium mb-2">How often should I replace my rubbers?</h3>
+                        <p class="text-gray-600">Competitive players typically replace rubbers every 3-6 months, while recreational players can go 6-12 months depending on usage.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section>
+                <h2 class="text-2xl font-semibold mb-6 pb-2 border-b border-gray-200">Contact Us</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-polare-gold focus:border-polare-gold">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-polare-gold focus:border-polare-gold">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                        <select id="subject" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-polare-gold focus:border-polare-gold">
+                            <option>Product Inquiry</option>
+                            <option>Order Support</option>
+                            <option>Technical Support</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-polare-gold focus:border-polare-gold"></textarea>
+                    </div>
+                    <button type="submit" class="bg-polare-red text-white px-6 py-2 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-polare-gold">
+                        Send Message
+                    </button>
+                </form>
+            </section>
+        </div>
+
+        <!-- Shipping & Returns -->
+        <section class="mt-16">
+            <h2 class="text-2xl font-semibold mb-6 pb-2 border-b border-gray-200">Shipping & Returns</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-polare-gold text-3xl mb-4">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Fast Shipping</h3>
+                    <p class="text-gray-600">We ship worldwide within 1-3 business days. Free shipping on orders over $50.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-polare-gold text-3xl mb-4">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Easy Returns</h3>
+                    <p class="text-gray-600">30-day return policy for unused products. Contact us for return authorization.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-polare-gold text-3xl mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Customer Support</h3>
+                    <p class="text-gray-600">Our team is available 9am-5pm EST to answer any questions you may have.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot Modal (same as index.html) -->
+    <div id="chatbot-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg w-full max-w-md max-h-[80vh] flex flex-col">
+            <div class="bg-polare-black text-white p-4 rounded-t-lg flex justify-between items-center">
+                <h3 class="text-lg font-semibold">Polare Assistant</h3>
+                <button id="chatbot-close" class="text-white hover:text-polare-gold">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="chatbot-messages" class="flex-1 p-4 overflow-y-auto">
+                <div class="bg-gray-100 rounded-lg p-3 mb-2">
+                    <p>Hello! I'm your Polare assistant. How can I help you today?</p>
+                </div>
+            </div>
+            <div class="p-4 border-t">
+                <div class="flex">
+                    <input id="chatbot-input" type="text" placeholder="Type your message..." 
+                           class="flex-1 border rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-polare-gold">
+                    <button id="chatbot-send" class="bg-polare-red text-white px-4 py-2 rounded-r-lg hover:bg-red-700">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chatbot Toggle
+        document.getElementById('chatbot-toggle').addEventListener('click', () => {
+            document.getElementById('chatbot-modal').classList.toggle('hidden');
+        });
+
+        document.getElementById('chatbot-close').addEventListener('click', () => {
+            document.getElementById('chatbot-modal').classList.add('hidden');
+        });
+
+        // Chatbot Functionality
+        document.getElementById('chatbot-send').addEventListener('click', async () => {
+            const input = document.getElementById('chatbot-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Add user message
+            const messagesDiv = document.getElementById('chatbot-messages');
+            messagesDiv.innerHTML += `
+                <div class="bg-polare-gold text-white rounded-lg p-3 mb-2 ml-8">
+                    <p>${message}</p>
+                </div>
+            `;
+
+            // Clear input
+            input.value = '';
+
+            // Scroll to bottom
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // Get AI response
+            try {
+                const response = await fetch('/chatbot', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message })
+                });
+                const data = await response.json();
+                
+                // Add AI response
+                messagesDiv.innerHTML += `
+                    <div class="bg-gray-100 rounded-lg p-3 mb-2">
+                        <p>${data.response}</p>
+                    </div>
+                `;
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        // Allow pressing Enter to send message
+        document.getElementById('chatbot-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('chatbot-send').click();
+            }
+        });
+    </script>
+</body>
+</html>
