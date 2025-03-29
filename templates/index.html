@@ -1,0 +1,506 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polare | Premium Table Tennis Equipment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --red: #C41E3A; 
+            --black: #121212;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fafafa;
+        }
+        .navbar {
+            backdrop-filter: blur(10px);
+            background-color: rgba(18, 18, 18, 0.9);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--red));
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Premium Navigation -->
+    <nav class="navbar fixed w-full z-50 py-4 px-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-white">
+                <span class="text-gold-500">POLARE</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="/products" class="text-white hover:text-gold-500 transition">Products</a>
+                <a href="/support" class="text-white hover:text-gold-500 transition">Support</a>
+                <a href="#" class="text-white hover:text-gold-500 transition">Our Story</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="bg-transparent border border-gold-500 text-gold-500 px-6 py-2 rounded-full hover:bg-gold-500 hover:text-white transition">Login</button>
+                <button id="chatbot-toggle" class="btn-primary px-6 py-2 rounded-full text-white">
+                    <i class="fas fa-comment-dots mr-2"></i>Assistant
+                </button>
+                <div class="relative">
+                    <button id="cart-toggle" class="bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20 transition">
+                        <i class="fas fa-shopping-cart text-white"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h3 class="text-lg font-bold">Your Cart</h3>
+            <button id="cart-close" class="text-gray-500 hover:text-black">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="cart-items" class="p-4 overflow-y-auto h-3/4">
+            <!-- Cart items will be added here dynamically -->
+            <p class="text-gray-500 text-center py-8">Your cart is empty</p>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-4 border-t bg-white">
+            <div class="flex justify-between mb-4">
+                <span>Subtotal:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="w-full btn-primary py-2 px-4 rounded-md text-white font-medium">
+                Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center bg-black overflow-hidden">
+        <video autoplay muted loop class="absolute w-full h-full object-cover opacity-40">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-table-tennis-game-1890-large.mp4" type="video/mp4">
+        </video>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Elevate Your Game</h1>
+            <p class="text-xl text-white mb-10 max-w-2xl mx-auto">Professional-grade table tennis equipment engineered for champions</p>
+            <div class="flex justify-center space-x-4">
+                <a href="/products" class="btn-primary px-8 py-4 rounded-full text-lg font-medium">Shop Collection</a>
+                <a href="#" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-black transition">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Engineered for Performance</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Precision-crafted equipment trusted by professional players worldwide</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Product Card 1 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-500 hover:shadow-xl animate-float"
+                     data-aos="fade-up" 
+                     data-aos-duration="800"
+                     data-aos-delay="100">
+                    <div class="h-80 bg-gray-100 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1591030434469-3d78b7bea372" alt="Polare Paddle" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Pro Carbon Series</h3>
+                        <p class="text-gray-600 mb-4">Ultra-lightweight carbon fiber construction</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$189.99</span>
+                            <button class="text-gold-500 hover:text-gold-700 add-to-cart" 
+                                    data-id="pro-carbon" 
+                                    data-name="Pro Carbon Series" 
+                                    data-price="189.99">
+                                <i class="fas fa-plus-circle text-2xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-500 hover:shadow-xl animate-float"
+                     data-aos="fade-up" 
+                     data-aos-duration="800"
+                     data-aos-delay="200">
+                    <div class="h-80 bg-gray-100 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1546743576-91b8b876a5c4" alt="Polare Balls" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Tournament 3-Star</h3>
+                        <p class="text-gray-600 mb-4">ITTF approved competition balls</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$14.99</span>
+                            <button class="text-gold-500 hover:text-gold-700 add-to-cart" 
+                                    data-id="tournament-balls" 
+                                    data-name="Tournament 3-Star" 
+                                    data-price="14.99">
+                                <i class="fas fa-plus-circle text-2xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-500 hover:shadow-xl animate-float"
+                     data-aos="fade-up" 
+                     data-aos-duration="800"
+                     data-aos-delay="300">
+                    <div class="h-80 bg-gray-100 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1603787081207-4b6f5a6f30a0" alt="Polare Rubbers" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Diamond Spin Rubbers</h3>
+                        <p class="text-gray-600 mb-4">Maximum spin and control</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$59.99</span>
+                            <button class="text-gold-500 hover:text-gold-700 add-to-cart" 
+                                    data-id="diamond-spin" 
+                                    data-name="Diamond Spin Rubbers" 
+                                    data-price="59.99">
+                                <i class="fas fa-plus-circle text-2xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl w-full max-w-md p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold" id="auth-title">Login to Polare</h3>
+                <button id="auth-close" class="text-gray-500 hover:text-black">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="auth-form" class="space-y-4">
+                <div>
+                    <label for="auth-email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="auth-email" required class="mt-1 block w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-gold-500 focus:border-gold-500">
+                </div>
+                <div>
+                    <label for="auth-password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="auth-password" required class="mt-1 block w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-gold-500 focus:border-gold-500">
+                </div>
+                <button type="submit" id="auth-submit" class="w-full btn-primary py-2 px-4 rounded-md text-white font-medium">
+                    Sign In
+                </button>
+                <div class="text-center">
+                    <button type="button" id="auth-toggle" class="text-gold-500 hover:underline">
+                        Need an account? Sign up instead
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chatbot Modal -->
+    <div id="chatbot-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl w-full max-w-md h-[80vh] flex flex-col">
+            <div class="bg-black text-white p-4 rounded-t-xl flex justify-between items-center">
+                <h3 class="text-lg font-semibold">Polare Assistant</h3>
+                <button id="chatbot-close" class="text-white hover:text-gold-500 transition">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="chatbot-messages" class="flex-1 p-4 overflow-y-auto space-y-4">
+                <div class="bg-gray-100 rounded-lg p-4">
+                    <p>Hello! I'm your Polare assistant. How can I help you with your table tennis needs today?</p>
+                </div>
+            </div>
+            <div class="p-4 border-t">
+                <div class="flex items-center">
+                    <input id="chatbot-input" type="text" placeholder="Ask about products, shipping, or support..." 
+                           class="flex-1 border border-gray-300 rounded-l-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-500">
+                    <button id="chatbot-send" class="bg-black text-white px-4 py-3 rounded-r-lg hover:bg-gray-800 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auth functionality
+        const authBtn = document.querySelector('.bg-transparent.border');
+        const authModal = document.getElementById('auth-modal');
+        const authClose = document.getElementById('auth-close');
+        const authForm = document.getElementById('auth-form');
+        const authTitle = document.getElementById('auth-title');
+        const authSubmit = document.getElementById('auth-submit');
+        const authToggle = document.getElementById('auth-toggle');
+        let isLoginMode = true;
+
+        // Toggle between login/signup
+        authToggle.addEventListener('click', () => {
+            isLoginMode = !isLoginMode;
+            authTitle.textContent = isLoginMode ? 'Login to Polare' : 'Create Account';
+            authSubmit.textContent = isLoginMode ? 'Sign In' : 'Sign Up';
+            authToggle.textContent = isLoginMode ? 'Need an account? Sign up instead' : 'Already have an account? Sign in';
+        });
+
+        // Open modal
+        authBtn.addEventListener('click', () => {
+            isLoginMode = true;
+            authTitle.textContent = 'Login to Polare';
+            authSubmit.textContent = 'Sign In';
+            authToggle.textContent = 'Need an account? Sign up instead';
+            authModal.classList.remove('hidden');
+        });
+
+        // Close modal
+        authClose.addEventListener('click', () => {
+            authModal.classList.add('hidden');
+        });
+
+        // Handle form submission
+        authForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('auth-email').value;
+            const password = document.getElementById('auth-password').value;
+
+            try {
+                const endpoint = isLoginMode ? '/login' : '/signup';
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    alert(`Welcome ${isLoginMode ? 'back' : ''}, ${data.name || email}!`);
+                    authModal.classList.add('hidden');
+                    authBtn.textContent = data.name || email;
+                    authBtn.classList.remove('border', 'border-gold-500', 'text-gold-500');
+                    authBtn.classList.add('bg-gold-500', 'text-white');
+                } else {
+                    alert(data.error || (isLoginMode ? 'Login failed' : 'Signup failed'));
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert(`${isLoginMode ? 'Login' : 'Signup'} failed. Please try again.`);
+            }
+        });
+
+        // Cart functionality
+        const cartToggle = document.getElementById('cart-toggle');
+        const cartClose = document.getElementById('cart-close');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartCount = document.getElementById('cart-count');
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        let cart = [];
+
+        // Toggle cart visibility
+        cartToggle.addEventListener('click', () => {
+            cartSidebar.classList.remove('translate-x-full');
+            updateCartDisplay();
+        });
+
+        cartClose.addEventListener('click', () => {
+            cartSidebar.classList.add('translate-x-full');
+        });
+
+        // Add to cart functionality
+        function addToCart(product) {
+            const existingItem = cart.find(item => item.id === product.id);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({...product, quantity: 1});
+            }
+            updateCartDisplay();
+        }
+
+        // Update cart UI
+        function updateCartDisplay() {
+            // Update count
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update items list
+            cartItems.innerHTML = cart.length ? 
+                cart.map(item => `
+                    <div class="flex justify-between items-center mb-4 pb-4 border-b">
+                        <div>
+                            <h4 class="font-medium">${item.name}</h4>
+                            <p class="text-sm text-gray-600">$${item.price} x ${item.quantity}</p>
+                        </div>
+                        <button class="text-red-500 hover:text-red-700 remove-item" data-id="${item.id}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `).join('') : 
+                '<p class="text-gray-500 text-center py-8">Your cart is empty</p>';
+            
+            // Update total
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = `$${subtotal.toFixed(2)}`;
+        }
+
+        // Remove item from cart
+        cartItems.addEventListener('click', (e) => {
+            if (e.target.closest('.remove-item')) {
+                const id = e.target.closest('.remove-item').dataset.id;
+                cart = cart.filter(item => item.id !== id);
+                updateCartDisplay();
+            }
+        });
+
+        // Add to cart button handlers
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const product = {
+                    id: button.dataset.id,
+                    name: button.dataset.name,
+                    price: parseFloat(button.dataset.price)
+                };
+                addToCart(product);
+                
+                // Visual feedback
+                button.innerHTML = '<i class="fas fa-check text-2xl"></i>';
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-plus-circle text-2xl"></i>';
+                }, 1000);
+            });
+        });
+
+        // Chatbot functionality
+        const toggleBtn = document.getElementById('chatbot-toggle');
+        const closeBtn = document.getElementById('chatbot-close');
+        const modal = document.getElementById('chatbot-modal');
+        const sendBtn = document.getElementById('chatbot-send');
+        const input = document.getElementById('chatbot-input');
+        const messages = document.getElementById('chatbot-messages');
+
+        // Toggle modal visibility
+        toggleBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            input.focus();
+        });
+        closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+
+        // Handle sending messages
+        async function sendMessage() {
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Add user message
+            messages.innerHTML += `
+                <div class="flex justify-end">
+                    <div class="bg-gold-500 text-white rounded-lg p-4 max-w-xs">
+                        <p>${message}</p>
+                    </div>
+                </div>
+            `;
+            input.value = '';
+            messages.scrollTop = messages.scrollHeight;
+
+            // Show typing indicator
+            messages.innerHTML += `
+                <div class="flex justify-start">
+                    <div class="bg-gray-100 rounded-lg p-4 max-w-xs">
+                        <div class="flex space-x-2">
+                            <div class="w-2 h-2 rounded-full bg-gray-400 animate-bounce"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style="animation-delay: 0.2s"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style="animation-delay: 0.4s"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            messages.scrollTop = messages.scrollHeight;
+
+            try {
+                const response = await fetch('/chatbot', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message })
+                });
+                const data = await response.json();
+                
+                // Remove typing indicator and add response
+                messages.removeChild(messages.lastChild);
+                messages.innerHTML += `
+                    <div class="flex justify-start">
+                        <div class="bg-gray-100 rounded-lg p-4 max-w-xs">
+                            <p>${data.response}</p>
+                        </div>
+                    </div>
+                `;
+                messages.scrollTop = messages.scrollHeight;
+            } catch (error) {
+                console.error('Error:', error);
+                messages.removeChild(messages.lastChild);
+                messages.innerHTML += `
+                    <div class="flex justify-start">
+                        <div class="bg-gray-100 rounded-lg p-4 max-w-xs text-red-500">
+                            <p>Sorry, I'm having trouble connecting. Please try again later.</p>
+                        </div>
+                    </div>
+                `;
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+
+        // Event listeners
+        sendBtn.addEventListener('click', sendMessage);
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    </script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: true
+        });
+    </script>
+</body>
+</html>
